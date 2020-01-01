@@ -1,3 +1,4 @@
 module.exports = {
-  parkingLotDetails: require("./parkingLotDetails")
+  parkingLotDetails: require("./parkingLotDetails"),
+  setSlotLimit: require("./setSlotLimit")
 };

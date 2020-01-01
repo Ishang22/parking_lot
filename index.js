@@ -1,3 +1,12 @@
+// let parkingLot = require("./Models/index").parkingLotDetails;
+// let parkingLot1 = require("./Models/index").setSlotLimit;
+// console.log("=====parkingLot====parkingLot===",parkingLot);
+// let parkingLot11 = new parkingLot1(10);
+// console.log(parkingLot11, parkingLot1.SlotLimit);
+// let newcar = new parkingLot(1, "RED", parkingLot1.SlotLimit - 1);
+// console.log(newcar, parkingLot1.SlotLimit);
+//console.log(newcar);
+
 let standard_input = process.stdin;
 
 standard_input.setEncoding("utf-8");
@@ -5,21 +14,25 @@ standard_input.setEncoding("utf-8");
 console.log("Please input text in command line.");
 
 standard_input.on("data", function(data) {
-  if (data === "exit\n") {
-    process.exit();
-  } else if (data.includes("create_parking_lot")) {
-    console.log("=====1=================");
-  } else if (data.includes("park")) {
-    console.log("=====2=================");
-  } else if (data.includes("leave")) {
-    console.log("=====3=================");
-  } else if (data.includes("status")) {
-    console.log("=====4=================");
-  } else if (data.includes("registration_numbers_for_cars_with_colour")) {
-    console.log("=====5=================");
-  } else if (data.includes("slot_numbers_for_cars_with_colour")) {
-    console.log("=====6=================");
-  } else {
-    console.log("User Input Data : " + data);
+  let expr = data.split(" ")[0];
+  switch (expr) {
+    case "create_parking_lot":
+      console.log("==create_parking_lot===");
+      break;
+    case "park":
+      break;
+    case "leave":
+      break;
+    case "status":
+      break;
+    case "registration_numbers_for_cars_with_colour":
+      break;
+    case "slot_numbers_for_cars_with_colour":
+      break;
+    case "exit\n":
+      process.exit();
+      break;
+    default:
+      console.log("invalid input");
   }
 });
