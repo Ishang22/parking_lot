@@ -1,0 +1,19 @@
+{
+  "name": "parking_lot",
+  "version": "1.0.0",
+  "description": "parking_lot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ishang22/parking_lot.git"
+  },
+  "author": "Ishan Garg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ishang22/parking_lot/issues"
+  },
+  "homepage": "https://github.com/Ishang22/parking_lot#readme"
+}
