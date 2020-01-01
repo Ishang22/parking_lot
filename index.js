@@ -7,19 +7,21 @@
 // console.log(newcar, parkingLot1.SlotLimit);
 //console.log(newcar);
 
+let parkingLotController = require("./Controllers/index").parkingLotController;
 let standard_input = process.stdin;
 
 standard_input.setEncoding("utf-8");
 
 console.log("Please input text in command line.");
 
-standard_input.on("data", function(data) {
+standard_input.on("data", async data => {
   let expr = data.split(" ")[0];
   switch (expr) {
     case "create_parking_lot":
-      console.log("==create_parking_lot===");
+      await parkingLotController.createParkingLot(data.split(" "));
       break;
     case "park":
+      await parkingLotController.allotParkingSlot(data.split(" "));
       break;
     case "leave":
       break;

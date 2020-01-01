@@ -1,4 +1,5 @@
 module.exports = {
   parkingLotDetails: require("./parkingLotDetails"),
-  setSlotLimit: require("./setSlotLimit")
+  setSlotLimit: require("./setSlotLimit"),
+  initializeSlotLimit: require("./initializeSlotLimit")
 };
