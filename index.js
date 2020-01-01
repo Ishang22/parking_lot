@@ -1,15 +1,7 @@
-// let parkingLot = require("./Models/index").parkingLotDetails;
-// let parkingLot1 = require("./Models/index").setSlotLimit;
-// console.log("=====parkingLot====parkingLot===",parkingLot);
-// let parkingLot11 = new parkingLot1(10);
-// console.log(parkingLot11, parkingLot1.SlotLimit);
-// let newcar = new parkingLot(1, "RED", parkingLot1.SlotLimit - 1);
-// console.log(newcar, parkingLot1.SlotLimit);
-//console.log(newcar);
-
 let parkingLotController = require("./Controllers/index").parkingLotController;
 let standard_input = process.stdin;
-
+const fs = require("fs");
+const fileName = "groceryList.json";
 standard_input.setEncoding("utf-8");
 
 console.log("Please input text in command line.");
@@ -24,6 +16,7 @@ standard_input.on("data", async data => {
       await parkingLotController.allotParkingSlot(data.split(" "));
       break;
     case "leave":
+      await parkingLotController.leaveSlot(data.split(" "));
       break;
     case "status":
       break;
@@ -32,6 +25,10 @@ standard_input.on("data", async data => {
     case "slot_numbers_for_cars_with_colour":
       break;
     case "exit\n":
+      fs.unlink(fileName, err => {
+        if (err) throw err;
+        process.exit();
+      });
       process.exit();
       break;
     default:
